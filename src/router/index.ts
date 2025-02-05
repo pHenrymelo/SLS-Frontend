@@ -5,6 +5,7 @@ const Journal = () => import('@/views/Quests/JournalView.vue')
 const Infos = () => import('@/views/infos/InfoView.vue')
 const ConfirmDelete = () => import('@/views/Quests/confirmDeleteView.vue')
 const QuestForm = () => import('@/views/Quests/formView.vue')
+const Status = () => import('@/views/Status/StatusView.vue')
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -31,6 +32,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/newQuest',
     name: 'NewQuest',
     component: QuestForm
+  },
+  {
+    path: '/status',
+    name: 'Status',
+    component: Status
   },
   {
     path: '/:pathMatch(.*)*',
