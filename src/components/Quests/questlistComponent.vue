@@ -4,8 +4,12 @@
         <div
         v-for="quest in quests"
         :key="quest.id"
-        class=" bg-blue-400 p-4 text-white w-full h-1/3 border-t-4 border-b-4 border-blue-700 rounded-sm">
-        <h2 class=" mx-auto w-fit font-bold text-2xl my-4">
+        class=" bg-blue-400 p-6 text-white w-full h-fit border-t-4 border-b-4 border-blue-700 rounded-sm">
+        <div class="w-full flex justify-between relative">
+          <a href=""><img class="w-8" src="../../assets/icons/gear.svg" alt="edit"></a>
+          <a href=""><img class="w-5" src="../../assets/icons/x.svg" alt="delete"></a>
+        </div>
+        <h2 class=" mx-auto w-fit font-bold text-2xl mb-4">
             {{ quest.title }}
         </h2>
         <p class=" w-4/5 mx-auto text mb-4 text-center">
