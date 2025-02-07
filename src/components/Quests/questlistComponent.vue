@@ -1,15 +1,15 @@
 <template>
-    <div class="w-3/5 h-4/5 border-2 p-4 border-blue-600 rounded-md flex flex-col mx-auto gap-4 overflow-auto"
+    <div class="w-3/5 h-4/5 border p-4 border-white rounded-md flex flex-col mx-auto gap-4 overflow-auto"
     >
         <div
         v-for="quest in quests"
         :key="quest.id"
-        class=" bg-blue-400 p-6 text-white w-full h-fit border-t-4 border-b-4 border-blue-700 rounded-sm">
+        class=" p-6 text-white w-full h-fit border border-white rounded-sm">
         <div class="w-full flex justify-between relative">
-          <a href=""><img class="w-8" src="../../assets/icons/gear.svg" alt="edit"></a>
-          <a href=""><img class="w-5" src="../../assets/icons/x.svg" alt="delete"></a>
+          <a href=""><img class="w-8 svg-shadow" src="../../assets/icons/gear.svg" alt="edit"></a>
+          <a href=""><img class="w-5 svg-shadow" src="../../assets/icons/x.svg" alt="delete"></a>
         </div>
-        <h2 class=" mx-auto w-fit font-bold text-2xl mb-4">
+        <h2 class=" mx-auto w-fit font-bold text-2xl mb-4 text-shadow-blue">
             {{ quest.title }}
         </h2>
         <p class=" w-4/5 mx-auto text mb-4 text-center">
@@ -19,10 +19,10 @@
 
           <span class=" w-fit mx-auto  p-2"
           v-if="quest.completed === true"
-          > <img class=" w-6" src="@/assets/icons/checkbox.svg" alt="checked"> </span>
+          > <img class=" w-6 svg-shadow" src="@/assets/icons/checkbox.svg" alt="checked"> </span>
           <span class=" w-fit mx-auto fill-blue-800 "
           v-else
-          > <img class=" w-6" src="@/assets/icons/checkbox-unchecked.svg" alt=""> </span>
+          > <img class=" w-7 svg-shadow" src="@/assets/icons/checkbox-unchecked.svg" alt=""> </span>
           <span class=" w-fit mx-auto"> {{ quest.createdAt }} </span>
         </div>
         </div>
