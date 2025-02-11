@@ -6,12 +6,18 @@ const Infos = () => import('@/views/infos/InfoView.vue')
 const ConfirmDelete = () => import('@/views/Quests/confirmDeleteView.vue')
 const QuestForm = () => import('@/views/Quests/formView.vue')
 const Status = () => import('@/views/Status/StatusView.vue')
+const UserForm = () => import('@/views/Users/UserFormView.vue')
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/session',
+    name: 'Session',
+    component: UserForm
   },
   {
     path: '/quests',
