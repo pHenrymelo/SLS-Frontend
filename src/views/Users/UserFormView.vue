@@ -1,40 +1,41 @@
 <template>
     <div class=" w-full h-full flex items-center flex-col p-12 gap-4 ">
-        <div v-if="form === 'signIn'">
+      <h1 class="my-4 text-white text-4xl font-bold border w-1/4 text-center py-4 text-shadow-blue">{{form}}</h1>
+
+        <div v-if="form === 'signIn'" class="w-full flex gap-4 items-center justify-center">
             <signInComponent />
         </div>
-        <div v-if="form === 'signUp'">
+        <div v-if="form === 'signUp'" class="w-full flex gap-4 items-center justify-center">
             <signUpComponent />
         </div>
+
         <div>
           <button @click="switchForm"
           class="p-2 rounded-sm border border-white text-white shadow-lg text-shadow-blue "
-          >{{form}}</button>
+          >{{formSwap}}</button>
         </div>
     </div>
 </template>
 
-<script lang="ts">
+<script>
 
-import signUpComponent from '@components/Users/signUpComponent.vue'
+import signUpComponent from '@/components/Users/signUpComponent.vue'
 import signInComponent from '@/components/Users/sigInComponent.vue'
 
 export default {
   name: 'UserFormView',
   data () {
     return {
-      form: 'signIn'
+      form: 'signIn',
+      formSwap: 'signUp'
     }
   },
   methods: {
     switchForm () {
-      if (this.form === 'signIn') {
-        this.form = 'signUp'
-        return this.form
-      }
+      const temp = this.form
+      this.form = this.formSwap
+      this.formSwap = temp
 
-      this.form = 'signIn'
-      console.log(this.form)
       return this.form
     }
   },
@@ -42,5 +43,6 @@ export default {
     signUpComponent,
     signInComponent
   }
+
 }
 </script>
